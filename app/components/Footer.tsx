@@ -40,12 +40,15 @@ const socials = [
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "/legal/privacy-policy" },
-  { label: "Risk Policy", href: "/legal/risk-policy" },
-  { label: "Order Execution Policy", href: "/legal/order-execution-policy" },
-  { label: "Payment Terms", href: "/legal/payment-terms" },
-  { label: "Complaint Policy", href: "/legal/complaint-policy" },
-  { label: "Cookies Policy", href: "/legal/cookies-policy" },
+  { label: "Order Execution Policy",      href: "/legal/order-execution-policy" },
+  { label: "Payment T&C",                 href: "/legal/payment-terms" },
+  { label: "Privacy Policy",              href: "/legal/privacy-policy" },
+  { label: "Risk Management Policy",      href: "/legal/risk-policy" },
+  { label: "Swap Free T&C",               href: "/legal/swap-free-tc" },
+  { label: "Website T&C",                 href: "/legal/website-tc" },
+  { label: "Complaint Handling Policy",   href: "/legal/complaint-policy" },
+  { label: "Conflict Of Interest Policy", href: "/legal/conflict-of-interest-policy" },
+  { label: "Cookies Policy",              href: "/legal/cookies-policy" },
 ];
 
 export default function Footer() {
