@@ -173,3 +173,12 @@ body {
 .dark input {
   color-scheme: dark;
 }
+
+/* ── Icon colour reveal on card hover ─────────────── */
+.icon-grey {
+  filter: grayscale(1) brightness(0.72);
+  transition: filter 0.35s ease, transform 0.3s ease;
+}
+.group:hover .icon-grey {
+  filter: grayscale(0) brightness(1);
+}

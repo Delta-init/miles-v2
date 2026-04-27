@@ -309,13 +309,7 @@ export default function Tools() {
               {/* Icon box */}
               <div className="w-full h-40 rounded-xl bg-gradient-to-br from-slate-200/60 to-gray-100/40 border border-border flex items-center justify-center mb-5 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-30" />
-                {/* Greyscale → colour on hover */}
-                <div
-                  className="relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl"
-                  style={{ filter: "grayscale(1) brightness(0.75)", transition: "filter 0.35s ease, transform 0.3s ease" }}
-                  onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(0) brightness(1)"}
-                  onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(1) brightness(0.75)"}
-                >
+                <div className="icon-grey relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
                   <t.Icon />
                 </div>
               </div>

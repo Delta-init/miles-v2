@@ -274,12 +274,7 @@ export default function Products() {
               <div className="rounded-2xl bg-gradient-to-br from-slate-200/60 to-gray-100/40 border border-border mb-5 h-52 flex flex-col items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-30" />
                 <div className="relative flex flex-col items-center gap-2 group-hover:scale-105 transition-transform duration-300">
-                  {/* Greyscale → colour on hover */}
-                  <div
-                    style={{ filter: "grayscale(1) brightness(0.75)", transition: "filter 0.35s ease" }}
-                    onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(0) brightness(1)"}
-                    onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(1) brightness(0.75)"}
-                  >
+                  <div className="icon-grey">
                     <p.Icon />
                   </div>
                   <span className="text-xs font-semibold tracking-widest text-muted uppercase">{p.stat}</span>

@@ -248,13 +248,7 @@ export default function Pillars() {
               {/* Icon stage */}
               <div className="w-full h-52 rounded-2xl bg-gradient-to-br from-slate-200/60 to-gray-100/40 border border-border mb-6 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-30" />
-                {/* Greyscale → colour on hover */}
-                <div
-                  className="relative group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl"
-                  style={{ filter: "grayscale(1) brightness(0.75)", transition: "filter 0.35s ease, transform 0.3s ease" }}
-                  onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(0) brightness(1)"}
-                  onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(1) brightness(0.75)"}
-                >
+                <div className="icon-grey relative group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl">
                   <p.Icon />
                 </div>
               </div>

@@ -336,20 +336,7 @@ export default function Accounts() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-300"
                   style={{ background: `radial-gradient(50% 70% at 50% 70%, ${a.glow}, transparent)` }}
                 />
-                {/* Icon: greyscale → real colour on hover */}
-                <div
-                  className="relative transition-all duration-400 group-hover:scale-110 drop-shadow-2xl"
-                  style={{
-                    filter: "grayscale(1) brightness(0.7)",
-                    transition: "filter 0.35s ease, transform 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.filter = "grayscale(0) brightness(1)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.filter = "grayscale(1) brightness(0.7)";
-                  }}
-                >
+                <div className="icon-grey relative group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl">
                   <a.Icon />
                 </div>
               </div>
