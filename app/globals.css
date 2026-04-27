@@ -2,14 +2,14 @@
 
 /* ── Light theme (default) ────────────────────────── */
 :root {
-  --background: #dfe3dc;
+  --background: #f7f8f6;
   --foreground: #0c1410;
-  --muted: #4e5a54;
-  --card-solid: #eaede7;
-  --border: #cdd1ca;
+  --muted: #5b6660;
+  --card-solid: #ffffff;
+  --border: #e5e7e2;
   --accent: #16a34a;
   --accent-strong: #15803d;
-  --accent-soft: #c8f0d8;
+  --accent-soft: #dcfce7;
 }
 
 /* ── Dark theme ───────────────────────────────────── */
