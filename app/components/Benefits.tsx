@@ -1,97 +1,138 @@
+/* ── Custom market icons ────────────────────────── */
+function ForexIcon() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
+      {/* Dollar circle */}
+      <circle cx="28" cy="40" r="20" fill="#16a34a" fillOpacity="0.15" stroke="#16a34a" strokeWidth="1.5"/>
+      <text x="28" y="46" textAnchor="middle" fontSize="18" fontWeight="700" fill="#16a34a" fontFamily="system-ui">$</text>
+      {/* Euro circle */}
+      <circle cx="52" cy="40" r="20" fill="#16a34a" fillOpacity="0.08" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="4 2"/>
+      <text x="52" y="46" textAnchor="middle" fontSize="18" fontWeight="700" fill="#16a34a" fontFamily="system-ui">€</text>
+      {/* Exchange arrows */}
+      <path d="M34 34 L46 34" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M43 31 L46 34 L43 37" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M46 46 L34 46" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M37 43 L34 46 L37 49" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function SharesIcon() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
+      {/* Bar chart bars */}
+      <rect x="14" y="52" width="12" height="16" rx="3" fill="#2563eb" fillOpacity="0.7"/>
+      <rect x="30" y="40" width="12" height="28" rx="3" fill="#2563eb" fillOpacity="0.85"/>
+      <rect x="46" y="28" width="12" height="40" rx="3" fill="#2563eb"/>
+      {/* Trend line */}
+      <path d="M20 50 L36 38 L52 26" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeDasharray="3 2"/>
+      {/* Arrow up */}
+      <path d="M58 22 L52 26 L56 32" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Base line */}
+      <line x1="10" y1="70" x2="70" y2="70" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.4"/>
+    </svg>
+  );
+}
+
+function CommoditiesIcon() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
+      {/* Oil barrel body */}
+      <rect x="22" y="28" width="36" height="34" rx="6" fill="#d97706" fillOpacity="0.15" stroke="#d97706" strokeWidth="1.5"/>
+      {/* Barrel ribs */}
+      <line x1="22" y1="38" x2="58" y2="38" stroke="#d97706" strokeWidth="1.2" strokeOpacity="0.6"/>
+      <line x1="22" y1="45" x2="58" y2="45" stroke="#d97706" strokeWidth="1.2" strokeOpacity="0.6"/>
+      <line x1="22" y1="52" x2="58" y2="52" stroke="#d97706" strokeWidth="1.2" strokeOpacity="0.6"/>
+      {/* Barrel top ellipse */}
+      <ellipse cx="40" cy="28" rx="18" ry="5" fill="#d97706" fillOpacity="0.25" stroke="#d97706" strokeWidth="1.5"/>
+      {/* Cap */}
+      <rect x="35" y="22" width="10" height="6" rx="2" fill="#d97706" fillOpacity="0.5" stroke="#d97706" strokeWidth="1"/>
+      {/* OIL label */}
+      <text x="40" y="64" textAnchor="middle" fontSize="8" fontWeight="700" fill="#d97706" fontFamily="system-ui" letterSpacing="1">OIL</text>
+    </svg>
+  );
+}
+
+function MetalsIcon() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
+      {/* Bottom bar */}
+      <rect x="12" y="55" width="56" height="14" rx="4" fill="#ca8a04" fillOpacity="0.3" stroke="#ca8a04" strokeWidth="1.5"/>
+      {/* Middle bar */}
+      <rect x="18" y="42" width="44" height="14" rx="4" fill="#ca8a04" fillOpacity="0.5" stroke="#ca8a04" strokeWidth="1.5"/>
+      {/* Top bar */}
+      <rect x="24" y="29" width="32" height="14" rx="4" fill="#ca8a04" fillOpacity="0.8" stroke="#ca8a04" strokeWidth="1.5"/>
+      {/* Shine lines */}
+      <line x1="28" y1="33" x2="28" y2="39" stroke="#fde68a" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.8"/>
+      <line x1="33" y1="33" x2="33" y2="39" stroke="#fde68a" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.5"/>
+      {/* Au label */}
+      <text x="40" y="43" textAnchor="middle" fontSize="8" fontWeight="700" fill="#92400e" fontFamily="system-ui" letterSpacing="1">Au</text>
+    </svg>
+  );
+}
+
+function IndicesIcon() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
+      {/* Grid lines */}
+      <line x1="14" y1="60" x2="66" y2="60" stroke="#7c3aed" strokeWidth="1" strokeOpacity="0.25"/>
+      <line x1="14" y1="48" x2="66" y2="48" stroke="#7c3aed" strokeWidth="1" strokeOpacity="0.25"/>
+      <line x1="14" y1="36" x2="66" y2="36" stroke="#7c3aed" strokeWidth="1" strokeOpacity="0.25"/>
+      <line x1="14" y1="24" x2="66" y2="24" stroke="#7c3aed" strokeWidth="1" strokeOpacity="0.25"/>
+      {/* Candlestick 1 */}
+      <line x1="22" y1="32" x2="22" y2="58" stroke="#7c3aed" strokeWidth="1" strokeOpacity="0.5"/>
+      <rect x="18" y="40" width="8" height="14" rx="1" fill="#7c3aed" fillOpacity="0.4" stroke="#7c3aed" strokeWidth="1"/>
+      {/* Candlestick 2 */}
+      <line x1="36" y1="28" x2="36" y2="52" stroke="#7c3aed" strokeWidth="1" strokeOpacity="0.5"/>
+      <rect x="32" y="34" width="8" height="12" rx="1" fill="#7c3aed" fillOpacity="0.6" stroke="#7c3aed" strokeWidth="1"/>
+      {/* Candlestick 3 */}
+      <line x1="50" y1="22" x2="50" y2="50" stroke="#7c3aed" strokeWidth="1" strokeOpacity="0.5"/>
+      <rect x="46" y="26" width="8" height="16" rx="1" fill="#7c3aed" stroke="#7c3aed" strokeWidth="1"/>
+      {/* Trend arrow */}
+      <path d="M62 20 L58 26" stroke="#7c3aed" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M58 20 L62 20 L62 24" stroke="#7c3aed" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+/* ── Product data ───────────────────────────────── */
 const products = [
   {
     title: "Forex",
     body: "Trade with tight spreads and low trading costs. Access the most competitive spreads in the industry.",
     stat: "70+ Pairs",
-    trend: "up",
-    points: "0,50 25,30 50,40 75,20 100,35 125,15 150,25",
-    color: "from-green-500/20 to-emerald-400/10",
-    accent: "#16a34a",
+    color: "from-green-500/15 to-emerald-400/5",
+    Icon: ForexIcon,
   },
   {
     title: "Shares",
     body: "Invest in leading global companies and diversify your investment portfolio with ease.",
     stat: "500+ Stocks",
-    trend: "up",
-    points: "0,45 25,40 50,35 75,38 100,25 125,20 150,18",
-    color: "from-blue-500/20 to-cyan-400/10",
-    accent: "#2563eb",
+    color: "from-blue-500/15 to-cyan-400/5",
+    Icon: SharesIcon,
   },
   {
     title: "Commodities",
     body: "Access the global commodity market with comprehensive tools and resources at your fingertips.",
     stat: "Oil · Gas · Wheat",
-    trend: "down",
-    points: "0,20 25,28 50,22 75,35 100,30 125,40 150,38",
-    color: "from-orange-500/20 to-amber-400/10",
-    accent: "#d97706",
+    color: "from-orange-500/15 to-amber-400/5",
+    Icon: CommoditiesIcon,
   },
   {
     title: "Metals",
     body: "Trade gold, silver, platinum and palladium — diverse opportunities across precious metals markets.",
     stat: "Gold · Silver · Platinum",
-    trend: "up",
-    points: "0,48 25,42 50,38 75,30 100,25 125,18 150,12",
-    color: "from-yellow-500/20 to-yellow-300/10",
-    accent: "#ca8a04",
+    color: "from-yellow-500/15 to-yellow-300/5",
+    Icon: MetalsIcon,
   },
   {
     title: "Indices",
     body: "Trade the S&P 500, Dow Jones and more with low spreads and lightning-fast order execution.",
     stat: "S&P · NASDAQ · DAX",
-    trend: "up",
-    points: "0,50 25,38 50,42 75,28 100,20 125,22 150,10",
-    color: "from-purple-500/20 to-violet-400/10",
-    accent: "#7c3aed",
+    color: "from-purple-500/15 to-violet-400/5",
+    Icon: IndicesIcon,
   },
 ];
-
-function MiniChart({
-  points,
-  accent,
-  trend,
-}: {
-  points: string;
-  accent: string;
-  trend: "up" | "down";
-}) {
-  return (
-    <svg viewBox="0 0 150 60" fill="none" className="w-full h-16">
-      {/* Area fill */}
-      <defs>
-        <linearGradient id={`grad-${accent}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={accent} stopOpacity="0.3" />
-          <stop offset="100%" stopColor={accent} stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <polygon
-        points={`0,60 ${points} 150,60`}
-        fill={`url(#grad-${accent})`}
-      />
-      <polyline
-        points={points}
-        stroke={accent}
-        strokeWidth="2"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* End dot */}
-      {(() => {
-        const last = points.trim().split(" ").pop()?.split(",");
-        if (!last) return null;
-        return (
-          <circle
-            cx={last[0]}
-            cy={last[1]}
-            r="3"
-            fill={accent}
-          />
-        );
-      })()}
-    </svg>
-  );
-}
 
 export default function Products() {
   return (
@@ -113,20 +154,15 @@ export default function Products() {
         <div className="grid md:grid-cols-3 gap-4">
           {products.map((p, i) => (
             <div key={p.title} className="card p-6 flex flex-col">
-              {/* Chart thumbnail */}
+              {/* Icon thumbnail */}
               <div
-                className={`rounded-xl bg-gradient-to-br ${p.color} border border-border mb-5 px-4 pt-4 pb-1 relative overflow-hidden`}
+                className={`rounded-2xl bg-gradient-to-br ${p.color} border border-border mb-5 h-36 flex flex-col items-center justify-center gap-2 relative overflow-hidden`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium">{p.title}</span>
-                  <span
-                    className="text-xs font-mono"
-                    style={{ color: p.accent }}
-                  >
-                    {p.stat}
-                  </span>
+                <div className="absolute inset-0 bg-grid opacity-40" />
+                <div className="relative flex flex-col items-center gap-1">
+                  <p.Icon />
+                  <span className="text-xs font-semibold tracking-wide text-muted">{p.stat}</span>
                 </div>
-                <MiniChart points={p.points} accent={p.accent} trend={p.trend as "up" | "down"} />
               </div>
 
               <div className="w-8 h-8 rounded-lg bg-accent/15 mb-3 flex items-center justify-center text-accent text-xs font-bold">
