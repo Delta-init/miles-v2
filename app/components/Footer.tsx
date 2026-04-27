@@ -55,14 +55,17 @@ export default function Footer() {
   return (
     <footer className="border-t border-border py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="md:col-span-1">
+
+        {/* ── Main grid ── */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+
+          {/* Brand — spans 2 cols on desktop */}
+          <div className="col-span-2 md:col-span-2">
             <MilesCapitalLogo size={40} />
-            <p className="text-muted text-sm mt-4 leading-relaxed">
+            <p className="text-muted text-sm mt-4 leading-relaxed max-w-xs">
               We enable millions of people to achieve their financial dreams.
             </p>
-            <div className="flex gap-3 mt-4">
+            <div className="flex gap-3 mt-5">
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -80,18 +83,18 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <div className="text-sm font-medium mb-4">Quick Links</div>
-            <ul className="space-y-2 text-sm text-muted">
+            <div className="text-sm font-semibold mb-4 text-foreground">Quick Links</div>
+            <ul className="space-y-2.5 text-sm text-muted">
               {[
-                { label: "Home", href: "#" },
-                { label: "About Us", href: "#about" },
-                { label: "Products", href: "#products" },
-                { label: "Accounts", href: "#accounts" },
-                { label: "Blog", href: "#blog" },
+                { label: "Home",       href: "#" },
+                { label: "About Us",   href: "#about" },
+                { label: "Products",   href: "#products" },
+                { label: "Accounts",   href: "#accounts" },
+                { label: "Blog",       href: "#blog" },
                 { label: "Contact Us", href: "#contact" },
               ].map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="hover:text-foreground transition-colors">
+                  <a href={l.href} className="hover:text-accent transition-colors">
                     {l.label}
                   </a>
                 </li>
@@ -101,11 +104,11 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <div className="text-sm font-medium mb-4">Products</div>
-            <ul className="space-y-2 text-sm text-muted">
+            <div className="text-sm font-semibold mb-4 text-foreground">Products</div>
+            <ul className="space-y-2.5 text-sm text-muted">
               {["Forex", "Metals", "Commodities", "Indices", "Shares"].map((l) => (
                 <li key={l}>
-                  <a href="#products" className="hover:text-foreground transition-colors">
+                  <a href="#products" className="hover:text-accent transition-colors">
                     {l}
                   </a>
                 </li>
@@ -113,18 +116,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Legal */}
+          {/* Contact */}
           <div>
-            <div className="text-sm font-medium mb-4">Contact</div>
-            <ul className="space-y-2 text-sm text-muted">
-              <li>📍 Sterling Tower 14, Poudrière St, Port-Louis, Mauritius</li>
+            <div className="text-sm font-semibold mb-4 text-foreground">Contact</div>
+            <ul className="space-y-2.5 text-sm text-muted">
+              <li className="leading-snug">📍 Sterling Tower 14, Poudrière St, Port-Louis, Mauritius</li>
               <li>
-                <a href="tel:+2302456703" className="hover:text-foreground transition-colors">
+                <a href="tel:+2302456703" className="hover:text-accent transition-colors">
                   📞 +230 245 6703
                 </a>
               </li>
               <li>
-                <a href="mailto:info@milescap.com" className="hover:text-foreground transition-colors">
+                <a href="mailto:info@milescap.com" className="hover:text-accent transition-colors">
                   ✉️ info@milescap.com
                 </a>
               </li>
@@ -132,31 +135,43 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Regulatory */}
-        <div className="mt-10 pt-6 border-t border-border">
+        {/* ── Terms & Conditions full-width block ── */}
+        <div className="mt-10 pt-8 border-t border-border">
+          <div className="text-sm font-semibold text-foreground mb-4">Terms &amp; Conditions</div>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-2.5">
+            {legalLinks.map((l) => (
+              <li key={l.label}>
+                <a
+                  href={l.href}
+                  className="flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
+                >
+                  <span className="text-accent text-xs">›</span>
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ── Regulatory ── */}
+        <div className="mt-8 pt-6 border-t border-border">
           <p className="text-xs text-muted leading-relaxed max-w-4xl">
             <strong>Regulated:</strong> Miles Capital is regulated under The Financial Services
             Commission (FSC) of Mauritius. License: GB22201008 · Company No: 194281.
           </p>
           <p className="text-xs text-muted mt-2 leading-relaxed max-w-4xl">
-            <strong>Risk Warning:</strong> An investment in derivatives may mean investors may
-            lose an amount even greater than their original investment. Trading Forex/CFDs is not
-            suitable for all investors. Not available in: Iran, Somalia, Syria, Yemen, India, UAE,
-            Republic of Congo.
+            <strong>Risk Warning:</strong> An investment in derivatives may mean investors may lose
+            an amount even greater than their original investment. Trading Forex/CFDs is not suitable
+            for all investors. Not available in: Iran, Somalia, Syria, Yemen, India, UAE, Republic of Congo.
           </p>
-          <div className="flex flex-wrap gap-3 mt-4 text-xs text-muted">
-            {legalLinks.map((l) => (
-              <a key={l.label} href={l.href} className="hover:text-foreground transition-colors">
-                {l.label}
-              </a>
-            ))}
-          </div>
         </div>
 
+        {/* ── Copyright ── */}
         <div className="mt-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-muted">
           <span>© {new Date().getFullYear()} Miles Capital. All rights reserved.</span>
           <span>Grow Your Capital Every Mile.</span>
         </div>
+
       </div>
     </footer>
   );
