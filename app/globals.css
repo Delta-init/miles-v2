@@ -1,26 +1,175 @@
 @import "tailwindcss";
 
+/* ── Light theme (default) ────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f8f6;
+  --foreground: #0c1410;
+  --muted: #5b6660;
+  --card-solid: #ffffff;
+  --border: #e5e7e2;
+  --accent: #16a34a;
+  --accent-strong: #15803d;
+  --accent-soft: #dcfce7;
+}
+
+/* ── Dark theme ───────────────────────────────────── */
+.dark {
+  --background: #0c0f0d;
+  --foreground: #f0f4f1;
+  --muted: #8a9e93;
+  --card-solid: #131a15;
+  --border: #1e2920;
+  --accent: #22c55e;
+  --accent-strong: #16a34a;
+  --accent-soft: #052e16;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card-solid);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
 }
 
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth;
+  letter-spacing: -0.01em;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* ── Grid dots ────────────────────────────────────── */
+.bg-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(12, 20, 16, 0.07) 1px,
+    transparent 0
+  );
+  background-size: 28px 28px;
+}
+
+.dark .bg-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(240, 244, 241, 0.05) 1px,
+    transparent 0
+  );
+}
+
+/* ── Glow ─────────────────────────────────────────── */
+.glow {
+  background: radial-gradient(
+    700px circle at 50% 0%,
+    rgba(22, 163, 74, 0.18),
+    transparent 60%
+  );
+}
+
+.dark .glow {
+  background: radial-gradient(
+    700px circle at 50% 0%,
+    rgba(34, 197, 94, 0.12),
+    transparent 60%
+  );
+}
+
+/* ── Card ─────────────────────────────────────────── */
+.card {
+  background: var(--card-solid);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 1px 0 rgba(12, 20, 16, 0.02), 0 8px 24px -16px rgba(12, 20, 16, 0.08);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.dark .card {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 8px 24px -16px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn-primary {
+  background: var(--foreground);
+  color: var(--background);
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-ghost {
+  background: var(--card-solid);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Chip ─────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: var(--accent-strong);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dark .chip {
+  color: var(--accent);
+}
+
+/* ── Gradient headline ────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(180deg, var(--foreground) 0%, var(--muted) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Pulse dot ────────────────────────────────────── */
+.dot-accent {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(22, 163, 74, 0.6);
+}
+
+/* ── Form inputs dark ─────────────────────────────── */
+.dark input {
+  color-scheme: dark;
 }
