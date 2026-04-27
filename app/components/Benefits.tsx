@@ -2,7 +2,7 @@
 
 function ForexIcon() {
   return (
-    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-16">
+    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-24">
       <defs>
         <radialGradient id="bk-coin1" cx="35%" cy="30%" r="65%">
           <stop offset="0%" stopColor="#6b7280"/>
@@ -43,7 +43,7 @@ function ForexIcon() {
 
 function SharesIcon() {
   return (
-    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-16">
+    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-24">
       <defs>
         <linearGradient id="bk-bar1" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#6b7280"/>
@@ -91,7 +91,7 @@ function SharesIcon() {
 
 function CommoditiesIcon() {
   return (
-    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-16">
+    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-24">
       <defs>
         <linearGradient id="bk-barrel" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#111827"/>
@@ -127,7 +127,7 @@ function CommoditiesIcon() {
 
 function MetalsIcon() {
   return (
-    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-16">
+    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-24">
       <defs>
         <linearGradient id="bk-gold-f" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#9ca3af"/>
@@ -174,7 +174,7 @@ function MetalsIcon() {
 
 function IndicesIcon() {
   return (
-    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-16">
+    <svg viewBox="0 0 96 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-24">
       <defs>
         <linearGradient id="bk-cdl1" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#6b7280"/>
@@ -285,7 +285,7 @@ export default function Products() {
           {products.map((p, i) => (
             <div key={p.title} className="card p-6 flex flex-col group hover:ring-1 hover:ring-accent/30 transition-all">
               {/* Icon thumbnail */}
-              <div className={`rounded-2xl bg-gradient-to-br ${p.color} border border-border mb-5 h-40 flex flex-col items-center justify-center relative overflow-hidden`}>
+              <div className={`rounded-2xl bg-gradient-to-br ${p.color} border border-border mb-5 h-52 flex flex-col items-center justify-center relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-grid opacity-30" />
                 <div className="relative flex flex-col items-center gap-2 group-hover:scale-105 transition-transform duration-300">
                   <p.Icon />
