@@ -258,10 +258,10 @@ function Card3D({
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       style={{ ...style, transition: "transform 0.2s ease, box-shadow 0.2s ease" }}
-      className="card p-7 flex flex-col relative overflow-hidden cursor-default rounded-2xl"
+      className="card p-7 flex flex-col relative cursor-default rounded-2xl"
     >
       <div
-        className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl overflow-hidden"
         style={{ background: `radial-gradient(260px circle at 50% 10%, ${glowColor}, transparent 70%)` }}
       />
       {children}
@@ -354,8 +354,11 @@ export default function Accounts() {
               )}
               {a.highlight && (
                 <span
-                  className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-[10px] font-black px-3 py-1 rounded-full text-white tracking-widest uppercase"
-                  style={{ background: `linear-gradient(135deg, #f59e0b, #d97706)`, boxShadow: `0 4px 12px ${a.shadow}60` }}
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-black px-4 py-1.5 rounded-full text-white tracking-wider uppercase z-20"
+                  style={{
+                    background: `linear-gradient(135deg, #f59e0b, #d97706)`,
+                    boxShadow: `0 4px 16px #f59e0b80, 0 0 0 2px white`,
+                  }}
                 >
                   ★ Most Popular
                 </span>
