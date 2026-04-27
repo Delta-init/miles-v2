@@ -1,6 +1,19 @@
 import { notFound } from "next/navigation";
 import MilesCapitalLogo from "../../components/Logo";
 
+/* Official PDF links from milescap.com */
+const pdfLinks: Record<string, string> = {
+  "order-execution-policy":      "https://milescap.com/Assets/T&C/order%20execution%20policy.pdf",
+  "payment-terms":               "https://milescap.com/Assets/T&C/PAYMENT%20T&C.pdf",
+  "privacy-policy":              "https://milescap.com/Assets/T&C/Privacy%20Policy.pdf",
+  "risk-policy":                 "https://milescap.com/Assets/T&C/RISK%20MANAGEMENT%20POLICY.pdf",
+  "swap-free-tc":                "https://milescap.com/Assets/T&C/SWAP%20FREE%20T&C.pdf",
+  "website-tc":                  "https://milescap.com/Assets/T&C/Website%20terms%20and%20conditions.pdf",
+  "complaint-policy":            "https://milescap.com/Assets/T&C/Complaint%20Handling%20Policy.pdf",
+  "conflict-of-interest-policy": "https://milescap.com/Assets/T&C/Conflict%20of%20interest%20policy.pdf",
+  "cookies-policy":              "https://milescap.com/Assets/T&C/Cookies%20Policy.pdf",
+};
+
 const policies: Record<
   string,
   { title: string; lastUpdated: string; sections: { heading: string; body: string }[] }
@@ -423,13 +436,30 @@ export default async function LegalPage({
         {/* Main content */}
         <main className="flex-1 min-w-0">
           <span className="chip mb-4">Legal</span>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mt-3">
-            {policy.title}
-          </h1>
-          <p className="text-muted text-sm mt-3">Last updated: {policy.lastUpdated}</p>
-          <p className="text-muted text-sm">
-            Miles Capital Ltd · FSC Mauritius · License GB22201008
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mt-3">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                {policy.title}
+              </h1>
+              <p className="text-muted text-sm mt-3">Last updated: {policy.lastUpdated}</p>
+              <p className="text-muted text-sm">
+                Miles Capital Ltd · FSC Mauritius · License GB22201008
+              </p>
+            </div>
+            {pdfLinks[slug] && (
+              <a
+                href={pdfLinks[slug]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border bg-card hover:border-accent/50 hover:text-accent transition-colors text-sm font-medium"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                </svg>
+                Download Official PDF
+              </a>
+            )}
+          </div>
 
           <div className="mt-12 space-y-8">
             {policy.sections.map((s) => (
