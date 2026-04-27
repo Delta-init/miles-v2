@@ -35,10 +35,8 @@ export default function Partnership() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-4">
-          {programs.map((p, i) => (
-            <div key={p.title} className={`card p-8 flex flex-col ${
-              i === 0 ? "card-green" : i === 1 ? "card-blue" : i === 2 ? "card-yellow" : "card-red"
-            }`}>
+          {programs.map((p) => (
+            <div key={p.title} className="card p-8 flex flex-col">
               <h3 className="text-xl font-medium">{p.title}</h3>
               <p className="text-muted mt-2 text-sm leading-relaxed">{p.body}</p>
               <ul className="mt-5 space-y-2 text-sm">

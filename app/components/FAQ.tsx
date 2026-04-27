@@ -36,10 +36,8 @@ export default function FAQ() {
           </h2>
         </div>
         <div className="space-y-3">
-          {faqs.map((f, i) => (
-            <details key={f.q} className={`card p-6 group [&[open]_.icon]:rotate-45 ${
-              i % 4 === 0 ? "card-green" : i % 4 === 1 ? "card-blue" : i % 4 === 2 ? "card-yellow" : "card-red"
-            }`}>
+          {faqs.map((f) => (
+            <details key={f.q} className="card p-6 group [&[open]_.icon]:rotate-45">
               <summary className="flex items-center justify-between cursor-pointer list-none">
                 <span className="font-medium">{f.q}</span>
                 <span className="icon transition-transform text-accent text-xl">+</span>

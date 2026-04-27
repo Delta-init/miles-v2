@@ -3,24 +3,22 @@
 /* ── Light theme (default) ────────────────────────── */
 :root {
   --background: #dfe3dc;
-  --foreground: #f2f5f0;
-  --foreground-dark: #0c1410;
-  --muted: #94a89e;
-  --card-solid: #0f1612;
-  --border: #000000;
-  --accent: #22c55e;
-  --accent-strong: #16a34a;
-  --accent-soft: #052e16;
+  --foreground: #0c1410;
+  --muted: #4e5a54;
+  --card-solid: #eaede7;
+  --border: #cdd1ca;
+  --accent: #16a34a;
+  --accent-strong: #15803d;
+  --accent-soft: #c8f0d8;
 }
 
 /* ── Dark theme ───────────────────────────────────── */
 .dark {
-  --background: #080b09;
+  --background: #0c0f0d;
   --foreground: #f0f4f1;
-  --foreground-dark: #f0f4f1;
   --muted: #8a9e93;
-  --card-solid: #0d1410;
-  --border: #000000;
+  --card-solid: #131a15;
+  --border: #1e2920;
   --accent: #22c55e;
   --accent-strong: #16a34a;
   --accent-soft: #052e16;
@@ -45,7 +43,7 @@
 html,
 body {
   background: var(--background);
-  color: var(--foreground-dark);
+  color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   scroll-behavior: smooth;
@@ -57,7 +55,7 @@ body {
 .bg-grid {
   background-image: radial-gradient(
     circle at 1px 1px,
-    rgba(0,0,0,0.12) 1px,
+    rgba(12, 20, 16, 0.07) 1px,
     transparent 0
   );
   background-size: 28px 28px;
@@ -66,7 +64,7 @@ body {
 .dark .bg-grid {
   background-image: radial-gradient(
     circle at 1px 1px,
-    rgba(255,255,255,0.04) 1px,
+    rgba(240, 244, 241, 0.05) 1px,
     transparent 0
   );
 }
@@ -75,7 +73,15 @@ body {
 .glow {
   background: radial-gradient(
     700px circle at 50% 0%,
-    rgba(34, 197, 94, 0.15),
+    rgba(22, 163, 74, 0.18),
+    transparent 60%
+  );
+}
+
+.dark .glow {
+  background: radial-gradient(
+    700px circle at 50% 0%,
+    rgba(34, 197, 94, 0.12),
     transparent 60%
   );
 }
@@ -83,101 +89,47 @@ body {
 /* ── Card ─────────────────────────────────────────── */
 .card {
   background: var(--card-solid);
-  border: 1.5px solid #000000;
+  border: 1px solid var(--border);
   border-radius: 20px;
-  color: #f2f5f0;
-  box-shadow:
-    0 0 0 0.5px #1a2a1e,
-    0 4px 0 #000,
-    0 8px 32px -8px rgba(0,0,0,0.6);
-  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+  box-shadow: 0 1px 0 rgba(12, 20, 16, 0.02), 0 8px 24px -16px rgba(12, 20, 16, 0.08);
+  transition: background 0.25s, border-color 0.25s;
 }
 
-.card:hover {
-  box-shadow:
-    0 0 0 0.5px #1a2a1e,
-    0 6px 0 #000,
-    0 16px 40px -8px rgba(0,0,0,0.7);
-}
-
-/* ── Coloured card variants ──────────────────────── */
-.card-yellow {
-  border-color: #ca8a04 !important;
-  box-shadow: 0 4px 0 #713f12, 0 8px 32px -8px rgba(202,138,4,0.3) !important;
-}
-.card-yellow:hover {
-  box-shadow: 0 6px 0 #713f12, 0 16px 40px -8px rgba(202,138,4,0.45) !important;
-}
-
-.card-red {
-  border-color: #dc2626 !important;
-  box-shadow: 0 4px 0 #7f1d1d, 0 8px 32px -8px rgba(220,38,38,0.3) !important;
-}
-.card-red:hover {
-  box-shadow: 0 6px 0 #7f1d1d, 0 16px 40px -8px rgba(220,38,38,0.45) !important;
-}
-
-.card-green {
-  border-color: #16a34a !important;
-  box-shadow: 0 4px 0 #052e16, 0 8px 32px -8px rgba(22,163,74,0.3) !important;
-}
-.card-green:hover {
-  box-shadow: 0 6px 0 #052e16, 0 16px 40px -8px rgba(22,163,74,0.45) !important;
-}
-
-.card-blue {
-  border-color: #2563eb !important;
-  box-shadow: 0 4px 0 #1e3a8a, 0 8px 32px -8px rgba(37,99,235,0.3) !important;
-}
-.card-blue:hover {
-  box-shadow: 0 6px 0 #1e3a8a, 0 16px 40px -8px rgba(37,99,235,0.45) !important;
+.dark .card {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 8px 24px -16px rgba(0, 0, 0, 0.4);
 }
 
 /* ── Buttons ──────────────────────────────────────── */
 .btn-primary {
-  background: #22c55e;
-  color: #fff;
-  border: 1.5px solid #16a34a;
+  background: var(--foreground);
+  color: var(--background);
   border-radius: 999px;
   padding: 11px 20px;
-  font-weight: 700;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 3px 0 #052e16;
-  transition: all 0.15s;
+  transition: background 0.2s, transform 0.2s;
 }
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 0 #052e16;
-}
-.btn-primary:active {
-  transform: translateY(1px);
-  box-shadow: 0 1px 0 #052e16;
+  opacity: 0.85;
 }
 
 .btn-ghost {
-  background: #0f1612;
-  color: #f2f5f0;
-  border: 1.5px solid #000;
+  background: var(--card-solid);
+  color: var(--foreground);
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 11px 20px;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 3px 0 #000;
-  transition: all 0.15s;
+  transition: background 0.2s, border-color 0.2s;
 }
 .btn-ghost:hover {
-  border-color: #22c55e;
-  color: #22c55e;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 0 #000;
-}
-.btn-ghost:active {
-  transform: translateY(1px);
-  box-shadow: 0 1px 0 #000;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Chip ─────────────────────────────────────────── */
@@ -185,21 +137,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1.5px solid #000;
-  background: #0f1612;
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
   border-radius: 999px;
   padding: 6px 14px;
   font-size: 12px;
-  color: #22c55e;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  color: var(--accent-strong);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  box-shadow: 0 2px 0 #000;
+}
+
+.dark .chip {
+  color: var(--accent);
 }
 
 /* ── Gradient headline ────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(180deg, #0c1410 0%, #4a5a50 100%);
+  background: linear-gradient(180deg, var(--foreground) 0%, var(--muted) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -211,23 +166,10 @@ body {
   height: 8px;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 12px rgba(34,197,94,0.7);
+  box-shadow: 0 0 12px rgba(22, 163, 74, 0.6);
 }
 
-/* ── Form inputs ─────────────────────────────────── */
-input {
-  background: #0f1612;
-  color: #f2f5f0;
-  border: 1.5px solid #000;
-}
-input::placeholder {
-  color: #94a89e;
-}
+/* ── Form inputs dark ─────────────────────────────── */
 .dark input {
   color-scheme: dark;
-}
-
-/* ── Navbar backdrop ─────────────────────────────── */
-header {
-  border-bottom-color: #000 !important;
 }
