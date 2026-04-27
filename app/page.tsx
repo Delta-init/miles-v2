@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechStack from "./components/TechStack";
 import Products from "./components/Benefits";
+import Payments from "./components/Payments";
 import WhyUs from "./components/Features";
 import Process from "./components/Process";
 import Pillars from "./components/Services";
@@ -23,6 +24,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Products />
+        <Payments />
         <WhyUs />
         <Process />
         <Tools />
