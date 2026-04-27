@@ -22,7 +22,9 @@ export default function WhyUs() {
         </div>
         <div className="grid md:grid-cols-3 gap-4">
           {reasons.map((r, i) => (
-            <div key={r.title} className="card p-7">
+            <div key={r.title} className={`card p-7 ${
+              i % 4 === 0 ? "card-green" : i % 4 === 1 ? "card-blue" : i % 4 === 2 ? "card-yellow" : "card-red"
+            }`}>
               <div className="text-xs text-muted">0{i + 1}</div>
               <h3 className="text-xl font-medium mt-3">{r.title}</h3>
               <p className="text-muted mt-2 text-sm leading-relaxed">{r.body}</p>

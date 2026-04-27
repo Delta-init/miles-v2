@@ -364,7 +364,9 @@ export default function Products() {
 
         <div className="grid md:grid-cols-3 gap-4">
           {products.map((p, i) => (
-            <div key={p.title} className="card p-6 flex flex-col group hover:ring-1 hover:ring-accent/30 transition-all">
+            <div key={p.title} className={`card p-6 flex flex-col group transition-all ${
+              i === 0 ? "card-green" : i === 1 ? "card-blue" : i === 2 ? "card-yellow" : i === 3 ? "card-yellow" : "card-red"
+            }`}>
               {/* Icon thumbnail */}
               <div
                 className={`rounded-2xl bg-gradient-to-br ${p.color} border border-border mb-5 h-40 flex flex-col items-center justify-center relative overflow-hidden`}
