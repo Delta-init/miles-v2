@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 
 function ChartIcon() {
   return (
-    <svg viewBox="0 0 80 80" fill="none" className="w-16 h-16">
+    <svg viewBox="0 0 80 80" fill="none" className="w-24 h-24">
       <defs>
         <linearGradient id="ch-screen" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#0f172a"/>
@@ -79,7 +79,7 @@ function ChartIcon() {
 
 function LightningIcon() {
   return (
-    <svg viewBox="0 0 80 80" fill="none" className="w-16 h-16">
+    <svg viewBox="0 0 80 80" fill="none" className="w-24 h-24">
       <defs>
         <linearGradient id="lt-body" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#fde68a"/>
@@ -131,7 +131,7 @@ function LightningIcon() {
 
 function MultiPlatformIcon() {
   return (
-    <svg viewBox="0 0 80 80" fill="none" className="w-16 h-16">
+    <svg viewBox="0 0 80 80" fill="none" className="w-24 h-24">
       <defs>
         <linearGradient id="mp-desk" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#818cf8"/>
@@ -313,9 +313,15 @@ export default function Platforms() {
           {platforms.map((p) => (
             <Card3D key={p.title} glowColor={p.glow} shadowColor={p.shadow}>
               {/* Icon box */}
-              <div className={`w-full h-36 rounded-xl bg-gradient-to-br ${p.bg} border border-border flex items-center justify-center mb-6 relative overflow-hidden`}>
+              <div className="w-full h-44 rounded-xl bg-gradient-to-br from-slate-200/60 to-gray-100/40 border border-border flex items-center justify-center mb-6 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-30" />
-                <div className="relative group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl">
+                {/* Greyscale → colour on hover */}
+                <div
+                  className="relative group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl"
+                  style={{ filter: "grayscale(1) brightness(0.75)", transition: "filter 0.35s ease, transform 0.3s ease" }}
+                  onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(0) brightness(1)"}
+                  onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.filter = "grayscale(1) brightness(0.75)"}
+                >
                   <p.Icon />
                 </div>
               </div>
