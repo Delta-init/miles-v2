@@ -198,15 +198,24 @@ function ClockIcon() {
         <circle cx="40" cy="36" r="24" fill="url(#clock-face)"/>
         {/* Face shine */}
         <ellipse cx="32" cy="26" rx="9" ry="6" fill="white" fillOpacity="0.18" transform="rotate(-20 32 26)"/>
-        {/* Hour marks */}
-        {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg, i) => {
-          const r = Math.PI * deg / 180;
-          const x1 = 40 + 19 * Math.sin(r);
-          const y1 = 36 - 19 * Math.cos(r);
-          const x2 = 40 + (i % 3 === 0 ? 15 : 17) * Math.sin(r);
-          const y2 = 36 - (i % 3 === 0 ? 15 : 17) * Math.cos(r);
-          return <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2} stroke="white" strokeWidth={i % 3 === 0 ? 2 : 1} strokeOpacity="0.7" strokeLinecap="round"/>;
-        })}
+        {/* Hour marks — pre-computed to avoid SSR/client hydration mismatch */}
+        {[
+          {x1:40,   y1:17,   x2:40,   y2:21,   major:true },
+          {x1:49.5, y1:19.5, x2:48.1, y2:22.1, major:false},
+          {x1:57.5, y1:26.5, x2:55.6, y2:28.2, major:false},
+          {x1:59,   y1:36,   x2:55,   y2:36,   major:true },
+          {x1:57.5, y1:45.5, x2:55.6, y2:43.8, major:false},
+          {x1:49.5, y1:52.5, x2:48.1, y2:49.9, major:false},
+          {x1:40,   y1:55,   x2:40,   y2:51,   major:true },
+          {x1:30.5, y1:52.5, x2:31.9, y2:49.9, major:false},
+          {x1:22.5, y1:45.5, x2:24.4, y2:43.8, major:false},
+          {x1:21,   y1:36,   x2:25,   y2:36,   major:true },
+          {x1:22.5, y1:26.5, x2:24.4, y2:28.2, major:false},
+          {x1:30.5, y1:19.5, x2:31.9, y2:22.1, major:false},
+        ].map((m, i) => (
+          <line key={i} x1={m.x1} y1={m.y1} x2={m.x2} y2={m.y2}
+            stroke="white" strokeWidth={m.major ? 2 : 1} strokeOpacity="0.7" strokeLinecap="round"/>
+        ))}
         {/* Hour hand */}
         <line x1="40" y1="36" x2="40" y2="22" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
         {/* Minute hand */}
