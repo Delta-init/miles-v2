@@ -150,7 +150,7 @@ function Card3D({
 /* ── Floating 3D node ─────────────────────────────── */
 function StepNode({ step }: { step: (typeof steps)[0] }) {
   return (
-    <div className="hidden md:flex w-20 shrink-0 items-center justify-center z-10">
+    <div className="hidden md:flex w-24 shrink-0 items-center justify-center z-10">
       <div className="relative">
         {/* Outer ring pulse */}
         <div
@@ -164,9 +164,9 @@ function StepNode({ step }: { step: (typeof steps)[0] }) {
         />
         {/* The node */}
         <div
-          className={`relative w-11 h-11 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white text-xs font-bold`}
+          className={`relative w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white text-xl font-black`}
           style={{
-            boxShadow: `0 0 0 3px var(--background), 0 0 0 5px ${step.shadow}40, 0 8px 20px ${step.shadow}60, inset 0 1px 0 rgba(255,255,255,0.3)`,
+            boxShadow: `0 0 0 4px var(--background), 0 0 0 6px ${step.shadow}50, 0 12px 28px ${step.shadow}70, inset 0 2px 0 rgba(255,255,255,0.35)`,
           }}
         >
           {step.n}
@@ -213,7 +213,7 @@ export default function Process() {
                   className={`relative flex flex-col md:flex-row items-center gap-0 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
                   {/* 3D Card */}
-                  <div className="w-full md:w-[calc(50%-2.5rem)]">
+                  <div className="w-full md:w-[calc(50%-3rem)]">
                     <Card3D glow={s.glow} shadowColor={s.shadow}>
                       <div className="relative flex items-start gap-4">
                         {/* 3D icon bubble */}
@@ -243,7 +243,7 @@ export default function Process() {
                   <StepNode step={s} />
 
                   {/* Empty side */}
-                  <div className="hidden md:block w-[calc(50%-2.5rem)]" />
+                  <div className="hidden md:block w-[calc(50%-3rem)]" />
                 </div>
               );
             })}
